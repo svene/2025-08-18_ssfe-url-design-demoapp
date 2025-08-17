@@ -1,7 +1,7 @@
 <div th:fragment="panel(id)">
 	<h2>Show Customer - ID [[${id}]]</h2>
 	<button
-		hx-get="http://localhost:8080/ui/fragments/customers/edit?id=2"
+		th:hx-get="@{/ui/fragments/customers/edit(id=${id})}"
 		hx-target="closest div"
 		hx-swap="outerHTML"
 	>Edit</button>

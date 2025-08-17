@@ -1,3 +1,8 @@
 <div th:fragment="panel(id)">
-	<h2>Orders-Show (Panel B) - ID [[${id}]]</h2>
+	<h2>Show Order - ID [[${id}]]</h2>
+	<button
+			hx-get="http://localhost:8080/ui/fragments/orders/edit?id=2"
+			hx-target="closest div"
+			hx-swap="outerHTML"
+	>Edit</button>
 </div>

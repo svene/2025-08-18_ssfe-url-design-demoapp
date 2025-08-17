@@ -40,6 +40,13 @@ public class MainController {
 		if (customerEdit != null) {
 			customerNew = null;
 		}
+		if (orderShow != null) {
+			orderEdit = null;
+			orderNew = null;
+		}
+		if (orderEdit != null) {
+			orderNew = null;
+		}
 
 		// expose states to the view
 		if (customerShow != null) {

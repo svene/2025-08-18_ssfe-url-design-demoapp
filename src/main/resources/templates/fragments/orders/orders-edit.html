@@ -1,3 +1,13 @@
-<div th:fragment="panel(id)">
+<div data-x="edit" th:fragment="panel(id)">
 	<h2>Edit Order - ID [[${id}]]</h2>
+	<button
+		th:hx-get="@{/ui/fragments/orders/show(id=${id})}"
+		hx-target="closest div"
+		hx-swap="outerHTML"
+	>Cancel</button>
+	<button
+		th:hx-get="@{/ui/fragments/orders/show(id=${id})}"
+		hx-target="closest div"
+		hx-swap="outerHTML"
+	>OK</button>
 </div>

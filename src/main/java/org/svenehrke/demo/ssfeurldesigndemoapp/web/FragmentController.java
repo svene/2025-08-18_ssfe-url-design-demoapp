@@ -24,4 +24,14 @@ public class FragmentController {
 		model.addAttribute("id", id);
 		return "fragments/customers/customers-show :: panel";
 	}
+	@GetMapping("/ui/fragments/orders/edit")
+	public String editOrderFragment(@RequestParam("id") Long id, Model model) {
+		model.addAttribute("id", id);
+		return "fragments/orders/orders-edit :: panel";
+	}
+	@GetMapping("/ui/fragments/orders/show")
+	public String showOrder(@RequestParam("id") Long id, Model model) {
+		model.addAttribute("id", id);
+		return "fragments/orders/orders-show :: panel";
+	}
 }
