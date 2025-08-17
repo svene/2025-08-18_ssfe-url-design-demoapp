@@ -31,6 +31,16 @@ public class MainController {
 		@RequestParam(value = "items.new", required = false) Boolean itemNew,
 		Model model) {
 
+		// Prevent invalid combination of parameters:
+		// Precedence: show > edit > new:
+		if (customerShow != null) {
+			customerEdit = null;
+			customerNew = null;
+		}
+		if (customerEdit != null) {
+			customerNew = null;
+		}
+
 		// expose states to the view
 		if (customerShow != null) {
 			model.addAttribute("customerShow", customerShow);
