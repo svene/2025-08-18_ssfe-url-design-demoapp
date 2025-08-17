@@ -50,4 +50,11 @@ public class MainController {
 
 		return "app"; // renders app.html
 	}
+
+	@GetMapping("/ui/fragcustomers/edit")
+	public String editCustomerFragment(@RequestParam("id") Long customerId, Model model) {
+		model.addAttribute("id", customerId);
+		return "fragments/customers/customers-edit :: panel";
+//		return "fragments/customers/customers-edit";
+	}
 }
