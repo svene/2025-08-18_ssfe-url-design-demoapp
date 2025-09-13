@@ -88,7 +88,7 @@
 
 	<main>
 		<!-- Panel B: Customer details -->
-		<section>
+		<section data-testid="customer-details-panel">
 			<p>Panel B: Customer Details</p>
 			<th:block th:if="${customerShow != null}">
 				<th:block th:replace="~{fragments/customers/customers-show :: panel(${customerShow})}"></th:block>
@@ -102,7 +102,7 @@
 		</section>
 
 		<!-- Panel C: Orders list -->
-		<section>
+		<section data-testid="order-list-panel">
 			<p>TODO: Panel C: Orders List</p>
 			<table>
 				<tr>
@@ -125,7 +125,7 @@
 			</table>
 		</section>
 
-		<section>
+		<section data-testid="order-details-panel">
 			<p>Panel D: Order Details</p>
 			<th:block th:if="${orderShow != null}">
 				<th:block th:replace="~{fragments/orders/orders-show :: panel(${orderShow})}"></th:block>
@@ -138,7 +138,7 @@
 			</th:block>
 		</section>
 
-		<section>
+		<section data-testid="item-list-panel">
 			<p>Panel E: Items List / Details</p>
 			<ul>
 				<li>Item 1</li>
@@ -147,7 +147,7 @@
 			</ul>
 		</section>
 
-		<section>
+		<section data-testid="item-details-panel">
 			<p>Panel F: Item Details</p>
 <!--
 			<th:block th:if="${orderShow != null}">

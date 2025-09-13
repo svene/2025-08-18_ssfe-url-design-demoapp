@@ -5,8 +5,25 @@ test('has title', async ({ page }) => {
 
   // Expect a title "to contain" a substring.
   await expect(page).toHaveTitle(/App Layout with Top Nav/);
+
   const customerPanel = page.getByTestId('customer-panel');
   await expect(customerPanel.locator('p')).toHaveText('Panel A: Customer List');
+
+  const customerDetailsPanel = page.getByTestId('customer-details-panel');
+  await expect(customerDetailsPanel.locator('p')).toHaveText('Panel B: Customer Details');
+
+  const orderListPanel = page.getByTestId('order-list-panel');
+  await expect(orderListPanel.locator('p')).toHaveText('TODO: Panel C: Orders List');
+
+  const orderDetailsPanel = page.getByTestId('order-details-panel');
+  await expect(orderDetailsPanel.locator('p')).toHaveText('Panel D: Order Details');
+
+  const itemListPanel = page.getByTestId('item-list-panel');
+  await expect(itemListPanel.locator('p')).toHaveText('Panel E: Items List / Details');
+
+  const itemDetailsPanel = page.getByTestId('item-details-panel');
+  await expect(itemDetailsPanel.locator('p')).toHaveText('Panel F: Item Details');
+
 });
 /*
 test('get started link', async ({ page }) => {
