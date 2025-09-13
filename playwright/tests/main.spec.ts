@@ -5,6 +5,8 @@ test('has title', async ({ page }) => {
 
   // Expect a title "to contain" a substring.
   await expect(page).toHaveTitle(/App Layout with Top Nav/);
+  const customerPanel = page.getByTestId('customer-panel');
+  await expect(customerPanel.locator('p')).toHaveText('Panel A: Customer List');
 });
 /*
 test('get started link', async ({ page }) => {
