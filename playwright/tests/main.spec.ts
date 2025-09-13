@@ -1,4 +1,5 @@
-import { test, expect } from '@playwright/test';
+import {test, expect, Locator} from '@playwright/test';
+import {CustomerPanel} from "./customer-panel";
 
 test('has title', async ({ page }) => {
   await page.goto('http://localhost:8080/');
@@ -6,8 +7,8 @@ test('has title', async ({ page }) => {
   // Expect a title "to contain" a substring.
   await expect(page).toHaveTitle(/App Layout with Top Nav/);
 
-  const customerPanel = page.getByTestId('customer-panel');
-  await expect(customerPanel.locator('p')).toHaveText('Panel A: Customer List');
+  const customerPanel = new CustomerPanel(page);
+  await expect(customerPanel.getTitle()).toHaveText('Panel A: Customer List');
 
   const customerDetailsPanel = page.getByTestId('customer-details-panel');
   await expect(customerDetailsPanel.locator('p')).toHaveText('Panel B: Customer Details');
